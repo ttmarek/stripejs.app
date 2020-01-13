@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>card number</title>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="with-padding">
+      <a id="back-button" href="/">&lt; back</a>
+      <a href="https://stripe.com/docs/js" target="_blank">stripe.com/docs/js</a>
+    </div>
+    <div class="with-border with-padding with-margin">
+      <div id="card-number-element"></div>
+    </div>
+    <div class="with-border with-padding with-margin">
+      <div id="card-expiry-element"></div>
+    </div>
+    <div class="with-padding with-margin">
+      <h3>notes</h3>
+      <ul>
+        <li>You need expiry date or you'll get this error "Your card's expiration date is incomplete."</li>
+      </ul>      
+    </div>
+    <script src="card-number/index.js"></script> 
+  </body>  
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>iban</title>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="with-padding">
+      <a id="back-button" href="/">&lt; back</a>
+      <a href="https://stripe.com/docs/js" target="_blank">stripe.com/docs/js</a>
+    </div>
+    <div class="with-border with-padding with-margin">
+      <div id="iban-element"></div>
+    </div>
+    <div class="with-padding with-margin">
+      <h3>notes</h3>
+      <ul>
+        <li>iban is the bank account number, sepa is the debit protocol</li>
+        <li>supportedCountries: ['SEPA'] is a required "option" in the create call</li>
+        <li><a href="https://stripe.com/docs/testing#sepa-direct-debit" target="_blank">Test IBANs for SEPA DD</a></li>
+        <li><a href="https://stripe.com/docs/stripe-js/elements/iban" target="_blank">docs/stripe-js/elements/iban (Sources)</a></li>
+        <li><a href="https://stripe.com/docs/payments/sepa-debit" target="_blank">docs/payments/sepa-debit (PaymentMethods)</a></li>
+      </ul>     
+    </div>
+    <script src="iban/index.js"></script> 
+  </body>  
+</html>

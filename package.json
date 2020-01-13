@@ -1,0 +1,13 @@
+{
+  "name": "stripejs.app",
+  "version": "0.0.0",
+  "description": "An app to experiment with stripe.js",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "serve src/"
+  },
+  "devDependencies": {
+    "serve": "11.3.0"
+  }
+}
