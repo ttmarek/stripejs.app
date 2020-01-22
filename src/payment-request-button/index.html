@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Payment Request Button</title>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <link rel="stylesheet" href="../index.css">
+  </head>
+  <body>
+    <div class="with-padding">
+      <a id="back-button" href="/">&lt; back</a>
+      <a href="https://stripe.com/docs/js" target="_blank">stripe.com/docs/js</a>
+    </div>
+    <div class="with-padding with-margin">
+      <div id="payment-request-button">
+        <!-- A Stripe Element will be inserted here. -->
+      </div>
+    </div>
+    <div class="with-padding with-margin">
+      <h3>notes</h3>
+      <ul>
+        <li>steps:
+          <ol>
+            <li>create a payment request object (stripe.paymentRequest)</li>
+            <li>create an instance of elements, and mount the paymentRequestButton with the paymentRequest object</li>
+            <li>check if canMakePayment</li>
+            <li>if canMakePayment then mount the paymentRequestButton</li>
+            <li>listen for paymentRequest.on('token') or paymentRequest.on('paymentMethod')</li>
+          </ol>
+        </li>
+        <li><a target="_blank" href="https://stripe.com/docs/stripe-js/elements/payment-request-button">Payment Request Button</a></li>
+        <li>
+          <mark>If you wish to design your own button instead of using the paymentRequestButton Element, you may show your custom button based on the result of paymentRequest.canMakePayment(). Then, use paymentRequest.show() to display the browser interface when your button is clicked. When building your own button, follow Apple Pay’s Human Interface Guidelines.</mark>
+          <ul>
+            <li><a href="https://stripe.com/docs/stripe-js/elements/payment-request-button#html-js-own-button">https://stripe.com/docs/stripe-js/elements/payment-request-button#html-js-own-button</a></li>
+          </ul>
+        </li>
+      </ul>     
+    </div>
+    <script src="index.js"></script> 
+  </body>  
+</html>
