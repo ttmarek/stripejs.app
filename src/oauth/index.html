@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>oauth</title>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <link rel="stylesheet" href="../index.css">
+  </head>
+  <body>
+    <div class="with-padding">
+      <a id="back-button" href="/">&lt; back</a>
+    </div>
+    
+    <div class="with-border with-padding with-margin">
+      <h3>Express OAuth</h3>
+      <a target="_blank" id="express-link"></a>      
+    </div>
+    <div class="with-padding with-margin">
+      <h3>notes</h3>
+      <ul>
+        <li><a target="_blank" href="https://stripe.com/docs/connect/express-accounts">express-accounts</a></li>
+        <li>for Express, the state query param isn't strictly necessary</li>
+        <li><a target="_blank" href="https://stripe.com/docs/connect/standard-accounts">standard accounts</a></li>
+      </ul>            
+    </div>
+    <script src="index.js"></script> 
+  </body>  
+</html>
