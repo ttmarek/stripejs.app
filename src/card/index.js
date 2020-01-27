@@ -1,8 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
 const publishableKey = urlParams.get("key");
+const locale = urlParams.get("locale");
 
 const stripe = Stripe(publishableKey);
-const elements = stripe.elements();
+
+const elements = stripe.elements({ locale: locale || 'auto' });
 
 const style = {
   base: {
