@@ -15,15 +15,40 @@
     </div>
     
     <div class="with-border with-padding with-margin">
-      <h3>Express OAuth</h3>
-      <a target="_blank" id="express-link"></a>      
+      <a target="_blank" href="https://stripe.com/docs/connect/express-accounts"><h3>Express OAuth</h3></a>
+      <h4>Basic</h4>
+      <a target="_blank" id="express-link"></a>
+      <h4>(Customize) Business Type - Individual</h4>
+      <a target="_blank" id="express-link-individual"></a>
+      <h4>(Customize) Business Type - Company</h4>
+      <a target="_blank" id="express-link-company"></a>
+      <h4>(Customize) Prefill - email</h4>
+      <a target="_blank" id="express-link-prefill-email"></a>
+      <h4>(Customize) Suggested Capabilities</h4>
+      <a target="_blank" id="express-link-suggested-capabilities"></a>
+      <ol>
+        <li>create the oauth link</li>
+        <li>user follows the link and creates their account</li>
+        <li>user is redirected back to your site (redirect_uri in dashboard)</li>
+        <li>platform call stripe.oauth.token with the code from the redirect to get acct_id</li>
+      </ol>      
     </div>
+
+    <div class="with-border with-padding with-margin">
+      <a target="_blank" href="https://stripe.com/docs/connect/standard-accounts"><h3>Standard OAuth</h3></a>
+      <a target="_blank" id="standard-link"></a>      
+      <ol>
+        <li>create the oauth link</li>
+        <li>user follows the link and creates or connects their account</li>
+        <li>user is redirected back to your site (redirect_uri in dashboard)</li>
+        <li>platform call stripe.oauth.token with the code from the redirect to get acct_id</li>
+      </ol>
+    </div>
+
     <div class="with-padding with-margin">
       <h3>notes</h3>
       <ul>
-        <li><a target="_blank" href="https://stripe.com/docs/connect/express-accounts">express-accounts</a></li>
-        <li>for Express, the state query param isn't strictly necessary</li>
-        <li><a target="_blank" href="https://stripe.com/docs/connect/standard-accounts">standard accounts</a></li>
+        <li>for Express, the state query param isn't strictly necessary</li>        
       </ul>            
     </div>
     <script src="index.js"></script> 
