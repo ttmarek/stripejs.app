@@ -48,7 +48,15 @@
     <div class="with-padding with-margin">
       <h3>notes</h3>
       <ul>
-        <li>for Express, the state query param isn't strictly necessary</li>        
+        <li>for Express, the state query param isn't strictly necessary</li>       
+        <li>for Standard users might ask how they can associate the code returned in the redirect url with an account of there's that went through the oath flow</li> 
+        <ul>
+          <li>one approach is to create a unique id for your users before they go through the oath flow and use that for the <code>state</code> param</li>
+          <ul>
+            <li>this approach kills two birds with one stone - prevents CSRF attacks and allows you to associate your users with the stripe_user_id (account id)</li>            
+          </ul>
+          <li>another approach would be to user Cookies or JWT</li>
+        </ul>
       </ul>            
     </div>
     <script src="index.js"></script> 
