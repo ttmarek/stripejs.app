@@ -12,7 +12,16 @@ const paymentRequest = stripe.paymentRequest({
     amount: 1099
   },
   requestPayerName: true,
-  requestPayerEmail: true
+  requestPayerEmail: true,
+  requestShipping: true,
+  shippingOptions: [
+    {
+      id: "free-shipping",
+      label: "Free shipping",
+      detail: "Arrives in 5 to 7 days",
+      amount: 0
+    }
+  ]
 });
 
 const prButton = elements.create("paymentRequestButton", {
