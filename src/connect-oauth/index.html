@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <title>oauth</title>
+    <title>connect-oauth</title>
 
     <script src="https://js.stripe.com/v3/"></script>
 
@@ -13,9 +13,24 @@
     <div class="with-padding">
       <a id="back-button" href="/">&lt; back</a>
     </div>
+
+    <div class="with-padding with-margin">
+      <ul>
+        <li><a href="https://stripe.com/docs/connect/oauth-reference">Connect OAuth Reference</a></li>
+        <li>for Express, the state query param isn't strictly necessary</li>       
+        <li>for Standard users might ask how they can associate the code returned in the redirect url with an account of there's that went through the oath flow</li> 
+        <ul>
+          <li>one approach is to create a unique id for your users before they go through the oath flow and use that for the <code>state</code> param</li>
+          <ul>
+            <li>this approach kills two birds with one stone - prevents CSRF attacks and allows you to associate your users with the stripe_user_id (account id)</li>            
+          </ul>
+          <li>another approach would be to user Cookies or JWT</li>
+        </ul>
+      </ul>            
+    </div>
     
     <div class="with-border with-padding with-margin">
-      <a target="_blank" href="https://stripe.com/docs/connect/express-accounts"><h3>Express OAuth</h3></a>
+      <a target="_blank" href="https://stripe.com/docs/connect/express-accounts"><h3>Express OAuth</h3></a>      
       <h4>Basic</h4>
       <a target="_blank" id="express-link"></a>
       <h4>(Customize) Business Type - Individual</h4>
@@ -30,7 +45,10 @@
         <li>create the oauth link</li>
         <li>user follows the link and creates their account</li>
         <li>user is redirected back to your site (redirect_uri in dashboard)</li>
-        <li>platform call stripe.oauth.token with the code from the redirect to get acct_id</li>
+        <li>platform calls stripe.oauth.token with the code from the redirect to get acct_id</li>
+        <ul>
+          <li><a href="https://stripe.com/docs/connect/express-accounts#token-request">https://stripe.com/docs/connect/express-accounts#token-request</a></li>
+        </ul>
       </ol>      
     </div>
 
@@ -43,21 +61,6 @@
         <li>user is redirected back to your site (redirect_uri in dashboard)</li>
         <li>platform call stripe.oauth.token with the code from the redirect to get acct_id</li>
       </ol>
-    </div>
-
-    <div class="with-padding with-margin">
-      <h3>notes</h3>
-      <ul>
-        <li>for Express, the state query param isn't strictly necessary</li>       
-        <li>for Standard users might ask how they can associate the code returned in the redirect url with an account of there's that went through the oath flow</li> 
-        <ul>
-          <li>one approach is to create a unique id for your users before they go through the oath flow and use that for the <code>state</code> param</li>
-          <ul>
-            <li>this approach kills two birds with one stone - prevents CSRF attacks and allows you to associate your users with the stripe_user_id (account id)</li>            
-          </ul>
-          <li>another approach would be to user Cookies or JWT</li>
-        </ul>
-      </ul>            
     </div>
     <script src="index.js"></script> 
   </body>  
